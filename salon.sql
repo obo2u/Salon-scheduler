@@ -173,38 +173,44 @@ ALTER TABLE ONLY public.services ALTER COLUMN service_id SET DEFAULT nextval('pu
 -- Data for Name: appointments; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.appointments VALUES (64, 138, 3, '1pm');
-INSERT INTO public.appointments VALUES (65, 139, 3, '9pm');
-INSERT INTO public.appointments VALUES (66, 140, 2, '2pm');
-INSERT INTO public.appointments VALUES (67, 141, 3, '1am');
-INSERT INTO public.appointments VALUES (68, 142, 2, '2pm');
-INSERT INTO public.appointments VALUES (69, 143, 3, '9pm');
-INSERT INTO public.appointments VALUES (25, 106, 1, '10:30');
-INSERT INTO public.appointments VALUES (26, 106, 2, '11am');
-INSERT INTO public.appointments VALUES (45, 122, 3, '2pm');
+COPY public.appointments (appointment_id, customer_id, service_id, "time") FROM stdin;
+64	138	3	1pm
+65	139	3	9pm
+66	140	2	2pm
+67	141	3	1am
+68	142	2	2pm
+69	143	3	9pm
+25	106	1	10:30
+26	106	2	11am
+45	122	3	2pm
+\.
 
 
 --
 -- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.customers VALUES (106, '555-555-5555', 'Fabio');
-INSERT INTO public.customers VALUES (122, '090123', 'Ben');
-INSERT INTO public.customers VALUES (138, '123', 'Luke');
-INSERT INTO public.customers VALUES (139, '09090', 'Silva');
-INSERT INTO public.customers VALUES (140, '1919', 'John Smith');
-INSERT INTO public.customers VALUES (141, '78000-000', 'john bull');
-INSERT INTO public.customers VALUES (142, '90909090', 'Uma');
-INSERT INTO public.customers VALUES (143, '900', 'Paulinus');
+COPY public.customers (customer_id, phone, name) FROM stdin;
+106	555-555-5555	Fabio
+122	090123	Ben
+138	123	Luke
+139	09090	Silva
+140	1919	John Smith
+141	78000-000	john bull
+142	90909090	Uma
+143	900	Paulinus
+\.
 
 
 --
 -- Data for Name: services; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.services VALUES (1, 'cut');
-INSERT INTO public.services VALUES (2, 'braid');
-INSERT INTO public.services VALUES (3, 'frontal');
+COPY public.services (service_id, name) FROM stdin;
+1	cut
+2	braid
+3	frontal
+\.
 
 
 --
